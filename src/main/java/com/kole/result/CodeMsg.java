@@ -3,8 +3,7 @@ package com.kole.result;
 public class CodeMsg {
     private int code;
     private String msg;
-
-    //通用异常
+    
     public static CodeMsg SUCCESS = new CodeMsg(0,"调用成功！");
     public static CodeMsg SER_ERROR = new CodeMsg(500,"服务端访问异常！");
 

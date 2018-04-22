@@ -8,22 +8,15 @@ spring:
     mode: HTML5
     prefix: classpath:/templates/
     suffix: .html
-
-#数据库配置
-spring：
-  datasource：
-    driver-class-name： com.mysql.jdbc.Driver
-    url： jdbc:mysql://www.gnok.xin:3306/la_damo
-    username：root
-    password：123456
-
-spring：
-  jpa：
-    hibernate
-    show-sql： true
-      ddl-auto：update
-
-spring
-  jackson
-    serialization
-      indent_output：true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://www.gnok.xin:3306/la_demo
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: UTC

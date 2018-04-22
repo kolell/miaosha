@@ -8,7 +8,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Data
 @Entity
-@Table(name = "user", catalog = "springboot")
+@Table(name = "user", catalog = "la_demo")
 public class User {
     @Id
     @GeneratedValue(strategy = IDENTITY)

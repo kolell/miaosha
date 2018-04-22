@@ -17,6 +17,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     //等于
     List<User> findByUsernameAndAndPassword(String username, String password);
 
+    /**
     //And --- 等价于 SQL 中的 and 关键字；
     List<User> findByPNameAndPAge(String PName, Integer PAge);
 
@@ -102,4 +103,5 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query("select p from User p where p.pName = :name ")
     Page<User> withNameQueryPage(@Param("name") String name, Pageable pageable);
 
+    */
 }

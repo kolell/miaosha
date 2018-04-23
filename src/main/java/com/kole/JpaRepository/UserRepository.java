@@ -3,8 +3,6 @@ package com.kole.JpaRepository;
 import com.kole.dao.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
 public interface UserRepository extends JpaRepository<User, Integer> {
 
     User findByUsernameAndPassword(String username, String password);

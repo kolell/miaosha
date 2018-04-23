@@ -13,9 +13,8 @@ import java.util.Map;
 @RequestMapping("/demo")
 public class DemoController {
     @RequestMapping("/html")
-    @ResponseBody
-    String home() {
-        return "demo";
+    public String html(){
+        return"hello";
     }
 
     @RequestMapping("/success")

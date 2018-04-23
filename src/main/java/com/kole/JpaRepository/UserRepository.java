@@ -1,21 +1,13 @@
 package com.kole.JpaRepository;
 
 import com.kole.dao.User;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
-//1.以下方法基于属性名称和查询关键字，所以方法名称必须遵循命名规则，并且参数类型要与实体的参数类型一致。
-    // 只用于查询方法，以下给出常用的示例
 
-    //等于
-    List<User> findByUsernameAndAndPassword(String username, String password);
+    User findByUsernameAndPassword(String username, String password);
 
     /**
     //And --- 等价于 SQL 中的 and 关键字；

@@ -4,8 +4,10 @@ import com.kole.dao.User;
 import com.kole.result.CodeMsg;
 import com.kole.result.Result;
 import com.kole.service.UserService;
+import com.kole.until.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,7 +31,7 @@ public class UserController {
             data.put("info","用户名或密码错误！");
             return Result.Respose(CodeMsg.ERROR, data);
         }
-        data.put("data", String.valueOf(user));
+        data.put("info", JsonUtil.obj2StringPretty(user));
         return Result.Respose(CodeMsg.SUCCESS, data);
     }
 

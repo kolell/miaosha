@@ -8,9 +8,10 @@ spring:
     mode: HTML5
     prefix: classpath:/templates/
     suffix: .html
+#数据库配置
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://www.gnok.xin:3306/la_demo
+    url: jdbc:mysql://
     username: root
     password: 123456
   jpa:

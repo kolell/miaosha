@@ -3,7 +3,7 @@ package com.kole.dao;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Timestamp;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -13,10 +13,9 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class Goods {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "id", unique = true, nullable = false)
     private int id;
     private Double miaoshaPrice;
     private Integer stockCount;
-    private Date startDate;
-    private Date endDate;
+    private Timestamp startDate;
+    private Timestamp endDate;
 }

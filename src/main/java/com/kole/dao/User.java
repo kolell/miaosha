@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+import java.sql.Timestamp;
+
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Data
@@ -12,10 +14,11 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class User {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "id", unique = true, nullable = false)
     private int id;
     private String username;
     private String password;
     private String mobile;
+    private Timestamp createTime;
+    private Timestamp updateTime;
 
 }

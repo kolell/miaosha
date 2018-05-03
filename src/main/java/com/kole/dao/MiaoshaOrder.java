@@ -11,15 +11,12 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Data
 @Entity
-@Table(name = "goods", catalog = "la_demo")
-public class Goods {
+@Table(name = "miaosha_order", catalog = "la_demo")
+public class MiaoshaOrder {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
-    private String goodsName;
-    private String goodsTitle;
-    private String goodsImg;
-    private String goodsDetail;
-    private Double goodsPrice;
-    private Integer goodsStock;
+    private Long userId;
+    private Long orderId;
+    private Long goodsId;
 }

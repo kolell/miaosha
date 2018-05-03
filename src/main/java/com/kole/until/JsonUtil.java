@@ -96,7 +96,7 @@ public class JsonUtil {
 
     public static void main(String[] args) {
         User user = new User();
-        user.setId(666);
+        user.setId((long) 666);
         user.setUsername("kole");
 
         String json = "{\"username\":\"kole\",\"color\":\"blue\",\"id\":666}";

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,13 +30,14 @@ public class UserController {
 
     @RequestMapping(value= "/login.do", method = RequestMethod.POST)
     @ResponseBody
-    public Result<Map<Object, String>> login(String username, String password) {
+    public Result<Map<Object, String>> login(HttpSession session,String username, String password) {
         Map<Object,String> data = new HashMap<>();
         User user = userService.login(username, password);
         if(user == null){
             data.put("info","用户名或密码错误！");
             return Result.Respose(CodeMsg.ERROR, data);
         }
+        session.setAttribute("user",user);
         data.put("info", JsonUtil.obj2StringPretty(user));
         return Result.Respose(CodeMsg.SUCCESS, data);
     }

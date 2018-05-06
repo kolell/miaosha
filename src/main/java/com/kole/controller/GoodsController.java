@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -19,10 +19,11 @@ public class GoodsController {
     private GoodsService goodsService;
 
     @RequestMapping(value="/to_list", produces="text/html")
-    public String list(HttpServletRequest request, HttpServletResponse response, Model model, User user) {
+    public String list(HttpServletRequest request, HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
         model.addAttribute("user", user);
-        List<MiaoshaGoods> goods = goodsService.listGoods();
-        model.addAttribute("goodsList", goods);
+        List<MiaoshaGoods> goodsList = goodsService.listGoods();
+        model.addAttribute("goodsList", goodsList);
         return "goods_list";
     }
 

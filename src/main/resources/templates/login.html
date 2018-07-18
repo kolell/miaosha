@@ -86,10 +86,10 @@ function doLogin(){
 	var password = md5(str);
 	
 	$.ajax({
-		url: "/user/login.do",
+		url: "/login/do_login",
 	    type: "POST",
 	    data:{
-	    	username:$("#mobile").val(),
+	    	mobile:$("#mobile").val(),
 	    	password: password
 	    },
 	    success:function(data){
@@ -98,7 +98,7 @@ function doLogin(){
 	    		layer.msg("成功");
 	    		window.location.href="/goods/to_list";
 	    	}else{
-	    		layer.msg(data.data.info);
+	    		layer.msg(data.msg);
 	    	}
 	    },
 	    error:function(){
